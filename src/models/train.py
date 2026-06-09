@@ -310,6 +310,7 @@ class PatchDataset(Dataset):
         r, c = self.indices[i]
         h = self.half
         patch = self.s2[r - h:r + h + 1, c - h:c + h + 1, :]  # (9, 9, 11)
+        patch = np.nan_to_num(patch, nan=0.0)                   # ocean/edge NaNs → 0 (scaled mean)
         patch = np.ascontiguousarray(patch.transpose(2, 0, 1))  # (11, 9, 9)
         label = self.labels[r, c].copy()                        # (2,)
         return torch.from_numpy(patch), torch.from_numpy(label)
