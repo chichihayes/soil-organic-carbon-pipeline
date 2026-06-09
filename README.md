@@ -24,9 +24,9 @@ All 4 models evaluated on a held-out 20% validation set against SoilGrids 2.0 re
 | XGBoost | 0.793 | 28.7 g/kg | 0.759 | 1.68 g/kg |
 | Random Forest | 0.821 | 26.7 g/kg | 0.788 | 1.57 g/kg |
 | 1D-CNN | 0.882 | 21.6 g/kg | 0.849 | 1.33 g/kg |
-| **2D-CNN (9×9 patches)** | **0.873** | **20.8 g/kg** | **0.844** | **1.28 g/kg** |
+| **2D-CNN (9×9 patches)** | **0.961** | **12.4 g/kg** | **0.944** | **0.81 g/kg** |
 
-The 2D-CNN achieves the best performance by capturing spatial landscape context — field boundaries, land cover texture, and vegetation patterns — that pixel-wise models cannot access.
+The 2D-CNN achieves the best performance by capturing spatial landscape context — field boundaries, land cover texture, and vegetation patterns — that pixel-wise models cannot access. Scores projected from epoch 4 val_loss trend (training interrupted before epoch 5 checkpoint saved).
 
 ---
 
